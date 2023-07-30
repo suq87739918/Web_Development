@@ -1,0 +1,52 @@
+body {
+  font-family: "Sono", sans-serif;
+}
+.pricing-container {
+  display: flex;
+  gap: 100px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* 当你设置 flex: 1，这等价于 flex: 1 1 0。这里，flex-grow 是 1，意味着该项目将尝试使用任何额外可用的空间。
+如果所有项目都设置为 flex: 1，那么它们将均匀地分配额外的空间。flex-shrink 是 1，意味着如果空间不足，该项目将缩小以适应。flex-basis 是 0，
+意味着在分配额外空间之前，项目的默认大小就是其内容的大小。
+
+当你设置 flex: 0，这等价于 flex: 0 1 auto。flex-grow 是 0，意味着项目不会尝试使用额外的空间，所以如果其他项目需要更多空间，这个项目不会为它们让出自己的空间。
+flex-shrink 是 1，同样，如果空间不足，该项目将缩小以适应。flex-basis 是 auto，意味着项目的默认大小是它的内容或者其在 CSS 中指定的宽度/高度。*/
+.pricing-plan {
+  flex: 1;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  text-align: center;
+}
+.plan-button {
+  background-color: orange;
+  border: none;
+  padding: 10px;
+  margin-top: 5px;
+}
+.plan-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.plan-price {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.plan-features {
+  list-style: none;
+}
+/* Hint: What can you do with a media query and flexbox? */
+@media (max-width: 1250px) {
+  .pricing-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
