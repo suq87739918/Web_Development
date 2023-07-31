@@ -1,0 +1,22 @@
+.font {
+  font-family: "Borel", cursive;
+}
+#color {
+  color: coral;
+}
+#font-size {
+  font-size: 2rem;
+}
+#font-weight {
+  font-weight: 900;
+}
+#font-family {
+  font-family: "Borel", cursive;
+  font-weight: 400;
+}
+#text-align {
+  text-align: right;
+}
+html {
+  font-size: 30px;
+}
