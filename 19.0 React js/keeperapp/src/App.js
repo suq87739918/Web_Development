@@ -12,18 +12,18 @@ import { useState } from "react";
 // }
 
 function App() {
-  const [note, setNote] = useState([]);
+  const [notesArray, setNotesArray] = useState([]);
 
-  function addNote(newNote) {
-    setNote((prevNote) => {
-      return [...prevNote, newNote];
+  function addNewNote(newNote) {
+    setNotesArray((previousNotes) => {
+      return [...previousNotes, newNote];
     });
   }
 
-  function deleteItem(id) {
-    setNote((prevNotes) => {
-      return prevNotes.filter((note, index) => {
-        return index !== id;
+  function deleteNoteByIndex(noteIndex) {
+    setNotesArray((previousNotes) => {
+      return previousNotes.filter((currentNote, index) => {
+        return index !== noteIndex;
       });
     });
   }
@@ -31,15 +31,15 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea onAdd={addNote} />
-      {note.map((noteItem, index) => {
+      <CreateArea onAdd={addNewNote} />
+      {notesArray.map((currentNote, index) => {
         return (
           <Note
             key={index}
             id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-            onDelete={deleteItem}
+            title={currentNote.title}
+            content={currentNote.content}
+            onDelete={deleteNoteByIndex}
           />
         );
       })}

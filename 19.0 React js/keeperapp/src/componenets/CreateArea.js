@@ -23,6 +23,8 @@ function CreateArea(props) {
         ...prevValue,
         [name]: value,
       };
+      //这是ES6的计算属性名称语法。它允许你使用一个变量（在这里是name）作为对象属性的名称。
+      //因为name可以是"title"或"content"，这样这段代码可以动态地更新note对象中的"title"或"content"属性。
     });
   }
 
